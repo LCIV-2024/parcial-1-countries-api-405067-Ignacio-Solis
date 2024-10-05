@@ -20,30 +20,30 @@ public class CountryController {
     private final CountryService countryService;
     private final RestTemplate restTemplate;
 
-    @GetMapping("/countries")
+    @GetMapping("/api/countries")
     public List<CountryDTO> getCountries(@RequestParam(name="name", required = false) String name,
                                          @RequestParam(name="code", required = false) String code) {
         List<CountryDTO> countries = countryService.getCountries(name,code);
         return countries;
     }
 
-    @GetMapping("countries/{continent}")
+    @GetMapping("api/countries/{continent}")
     public List<CountryDTO> getCountriesByContinent(@PathVariable String continent) {
         return countryService.getCountriesByContinent(continent);
     }
 
-    @GetMapping("countries/language/{language}")
+    @GetMapping("api/countries/language/{language}")
     public List<CountryDTO> getCountriesByLanguage(@PathVariable String language) {
         return countryService.getCountriesByLanguage(language);
     }
 
-    @GetMapping("/countries/most-borders")
+    @GetMapping("api/countries/most-borders")
     public CountryDTO getCountryWithMostBorders() {
         return countryService.getCountryWithMostBorders();
 
     }
 
-    @PostMapping("/countries")
+    @PostMapping("api/countries")
         public List<CountryDTO> saveCountries(@RequestBody PostCountriesRequest req) {
         return countryService.postCountries(req.getAmountOfCountriesToSave());
     }

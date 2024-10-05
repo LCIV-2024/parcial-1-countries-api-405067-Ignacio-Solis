@@ -86,22 +86,22 @@ class CountryServiceTest {
     @Test
     void getCountryWithMostBorders() {
         Map<String, Object> country1 = new HashMap<>();
-        country1.put("name", Map.of("common", "Country A"));
+        country1.put("name", Map.of("clave", "Country A"));
         country1.put("population", 1000000);
         country1.put("area", 50000.0);
-        country1.put("cca2", "CA"); // Country code
+        country1.put("cca2", "CA");
         country1.put("region", "Region A");
         country1.put("borders", Arrays.asList("Country B", "Country C"));
-        country1.put("languages", Map.of("en", "English"));
+        country1.put("languages", Map.of("clave", "English"));
 
         Map<String, Object> country2 = new HashMap<>();
-        country2.put("name", Map.of("common", "Country B"));
+        country2.put("name", Map.of("clave", "Country B"));
         country2.put("population", 2000000);
         country2.put("area", 70000.0);
-        country2.put("cca2", "CB"); // Country code
+        country2.put("cca2", "CB");
         country2.put("region", "Region B");
         country2.put("borders", Arrays.asList("Country A"));
-        country2.put("languages", Map.of("es", "Spanish"));
+        country2.put("languages", Map.of("clave", "Spanish"));
 
         List<Map<String, Object>> mockedApiResponse = Arrays.asList(country1, country2);
 
